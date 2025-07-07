@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Mini-Enciclopédia de Cybersegurança e Malware</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    background-color: #121212;
+    color: #e0e0e0;
+    margin: 0;
+    padding: 0;
+  }
+  header {
+    background-color: #222;
+    padding: 20px;
+    text-align: center;
+  }
+  nav {
+    background-color: #1b1b1b;
+    padding: 10px;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  nav button {
+    background: #007acc;
+    border: none;
+    color: white;
+    padding: 10px 15px;
+    margin: 5px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-weight: bold;
+    transition: background-color 0.3s;
+  }
+  nav button:hover, nav button.active {
+    background-color: #005f99;
+  }
+  main {
+    max-width: 900px;
+    margin: 20px auto;
+    padding: 0 15px 30px 15px;
+  }
+  section {
+    display: none;
+  }
+  section.active {
+    display: block;
+  }
+  h1,h2,h3 {
+    color: #00aaff;
+  }
+  ul {
+    margin-left: 20px;
+    list-style-type: disc;
+  }
+  p {
+    line-height: 1.6;
+  }
+  footer {
+    background-color: #222;
+    color: #888;
+    text-align: center;
+    padding: 15px;
+    font-size: 0.9em;
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <h1>Mini-Enciclopédia de Cybersegurança e Malware</h1>
+</header>
+
+<nav id="menu">
+  <button class="active" data-target="introducao">Introdução</button>
+  <button data-target="tipos">Tipos de Malware</button>
+  <button data-target="historicos">Malwares dos Anos 2000</button>
+  <button data-target="como-age">Como Age um Malware</button>
+  <button data-target="antivirus">Antivírus Recomendados</button>
+  <button data-target="boas-praticas">Boas Práticas</button>
+  <button data-target="phishing">Phishing & Engenharia Social</button>
+  <button data-target="avancados">Malwares Avançados</button>
+</nav>
+
+<main>
+  <section id="introducao" class="active">
+    <h2>Introdução</h2>
+    <p>Malware (software malicioso) é um programa criado para causar danos, roubar dados, ou controlar sistemas sem permissão.</p>
+    <p>Cibersegurança é o conjunto de práticas para proteger computadores, redes e dados contra ataques e invasões.</p>
+  </section>
+
+  <section id="tipos">
+    <h2>Tipos de Malware</h2>
+    <ul>
+      <li><b>Vírus:</b> Infecta arquivos e se espalha quando executado.</li>
+      <li><b>Worm:</b> Se autorreplica e se espalha pela rede sozinho.</li>
+      <li><b>Trojan (Cavalo de Tróia):</b> Disfarça-se de programa legítimo para enganar usuários.</li>
+      <li><b>Spyware:</b> Espiona e coleta informações sem consentimento.</li>
+      <li><b>Adware:</b> Mostra anúncios indesejados e coleta dados.</li>
+      <li><b>Ransomware:</b> Criptografa arquivos e exige resgate para liberar.</li>
+      <li><b>Rootkit:</b> Esconde outras ameaças e permite controle remoto.</li>
+      <li><b>Keylogger:</b> Registra tudo que é digitado.</li>
+      <li><b>Backdoor:</b> Abre acesso secreto ao sistema.</li>
+      <li><b>Botnet:</b> Rede de máquinas infectadas controladas por hackers.</li>
+      <li><b>Malicious Macro:</b> Malware embutido em macros de documentos (Word, Excel).</li>
+      <li><b>Fileless Malware:</b> Atua diretamente na memória sem deixar arquivos.</li>
+      <li><b>Cryptojacker:</b> Usa seu computador para minerar criptomoedas sem autorização.</li>
+      <li><b>Logic Bomb:</b> Executa ação maliciosa quando uma condição é atendida.</li>
+      <li><b>Scareware:</b> Finge alertar sobre vírus para enganar o usuário.</li>
+      <li><b>Browser Hijacker:</b> Redireciona seu navegador para sites maliciosos.</li>
+      <li><b>Firmware Malware:</b> Infecta o firmware de hardware, difícil de detectar.</li>
+    </ul>
+  </section>
+
+  <section id="historicos">
+    <h2>Malwares que dominaram os anos 2000</h2>
+    <ul>
+      <li><b>ILOVEYOU:</b> Vírus que se espalhou por e-mail, causando bilhões em danos.</li>
+      <li><b>MyDoom:</b> Worm que gerou enorme tráfego na internet e lentidão global.</li>
+      <li><b>Conficker:</b> Worm que infectou milhões de computadores em todo o mundo.</li>
+      <li><b>Blaster:</b> Explorado vulnerabilidades do Windows para causar danos e reinícios.</li>
+      <li><b>Sasser:</b> Worm que explorava falhas do Windows para propagação rápida.</li>
+      <li><b>Zeus:</b> Trojan bancário que roubava dados financeiros.</li>
+      <li><b>Storm Worm:</b> Criou botnets enormes para ataques massivos.</li>
+      <li><b>Code Red:</b> Worm que atacava servidores web.</li>
+    </ul>
+  </section>
+
+  <section id="como-age">
+    <h2>Como Age um Malware</h2>
+    <p>1. Infecção: O malware entra no sistema via e-mail, download, vulnerabilidade ou engenharia social.</p>
+    <p>2. Propagação: Se multiplica copiando-se para outros arquivos ou sistemas na rede.</p>
+    <p>3. Execução: Roda o código malicioso para roubar dados, controlar o sistema ou causar danos.</p>
+    <p>4. Persistência: Tenta se esconder e se manter ativo mesmo após reinícios ou tentativas de remoção.</p>
+  </section>
+
+  <section id="antivirus">
+    <h2>Antivírus Recomendados</h2>
+    <ul>
+      <li><b>Bitdefender:</b> Alta taxa de detecção, leve e fácil de usar.</li>
+      <li><b>Kaspersky:</b> Muito eficaz contra ameaças avançadas.</li>
+      <li><b>Avast:</b> Gratuito, bom para usuários básicos.</li>
+      <li><b>Norton:</b> Completo, com firewall e proteção extra.</li>
+      <li><b>Malwarebytes:</b> Excelente para remoção e complementação.</li>
+      <li><b>Windows Defender:</b> Gratuito e integrado no Windows, bom para proteção básica.</li>
+    </ul>
+  </section>
+
+  <section id="boas-praticas">
+    <h2>Boas Práticas de Segurança</h2>
+    <ul>
+      <li>Manter sistema e programas sempre atualizados.</li>
+      <li>Não clicar em links suspeitos ou baixar anexos desconhecidos.</li>
+      <li>Usar senhas fortes e autenticação de dois fatores.</li>
+      <li>Fazer backups regulares dos dados importantes.</li>
+      <li>Utilizar antivírus confiável e mantê-lo atualizado.</li>
+      <li>Evitar usar redes Wi-Fi públicas sem VPN.</li>
+    </ul>
+  </section>
+
+  <section id="phishing">
+    <h2>Phishing e Engenharia Social</h2>
+    <p>Phishing é a técnica onde hackers tentam enganar usuários para revelar informações pessoais, como senhas ou dados bancários, usando e-mails falsos, mensagens ou sites clonados.</p>
+    <p>Engenharia social é o uso de manipulação psicológica para que as vítimas entreguem acesso ou informações.</p>
+    <p>Fique atento e desconfie sempre de pedidos urgentes ou estranhos.</p>
+  </section>
+
+  <section id="avancados">
+    <h2>Malwares Avançados e Ameaças Emergentes</h2>
+    <ul>
+      <li><b>Stuxnet:</b> Malware sofisticado criado para atacar infraestruturas industriais.</li>
+      <li><b>Flame:</b> Spyware complexo para espionagem digital.</li>
+      <li><b>Duqu:</b> Variante do Stuxnet focada em coleta de dados.</li>
+      <li><b>Regin:</b> Malware modular usado para espionagem em governos e empresas.</li>
+      <li><b>Ransomware Polimórfico:</b> Muda sua forma para evitar detecção.</li>
+      <li><b>Cryptojackers:</b> Mineram criptomoedas sem permissão do usuário.</li>
+    </ul>
+  </section>
+</main>
+
+<footer>
+  <p>© 2025 - Criado pelo ChatGPT para o TATATATATATATA</p>
+</footer>
+
+<script>
+  const botoes = document.querySelectorAll('nav button');
+  const sessoes = document.querySelectorAll('main section');
+
+  botoes.forEach(botao => {
+    botao.addEventListener('click', () => {
+      // Remove active de todos os botões
+      botoes.forEach(btn => btn.classList.remove('active'));
+      // Esconde todas as sessões
+      sessoes.forEach(sec => sec.classList.remove('active'));
+
+      // Ativa o botão e seção clicada
+      botao.classList.add('active');
+      const alvo = botao.getAttribute('data-target');
+      document.getElementById(alvo).classList.add('active');
+    });
+  });
+</script>
+
+</body>
+</html>
